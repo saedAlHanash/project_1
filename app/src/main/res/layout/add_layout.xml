@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:background="@drawable/item_task"
+    android:orientation="vertical"
+    android:theme="@style/AppTheme">
+
+    <ImageView
+        android:id="@+id/dialog_imageView"
+        android:layout_width="187dp"
+        android:layout_height="138dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_task_rafiki" />
+
+    <EditText
+        android:id="@+id/dialog_add_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:backgroundTint="#fff"
+        android:foregroundTint="#FFFFFF"
+        android:hint="to do..."
+        android:inputType="none"
+        android:textColorHint="#818181"
+        android:textCursorDrawable="@color/darck" />
+
+    <EditText
+        android:id="@+id/dialog_add_title_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:backgroundTint="#fff"
+        android:foregroundTint="#FFFFFF"
+        android:hint="title..."
+        android:inputType="none"
+        android:textColorHint="#818181"
+        android:textCursorDrawable="@color/darck" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="106dp">
+
+
+        <Button
+            android:id="@+id/dialog_add_date_btn"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_baseline_notifications_none_24"
+            android:text="To day"
+            android:textColor="#505050"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageButton
+            android:id="@+id/dialog_color_btn"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/button_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/dialog_icon_btn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.407" />
+
+        <ImageButton
+            android:id="@+id/dialog_icon_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.285" />
+
+        <Button
+            android:id="@+id/dialog_add_add_btn"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_baseline_add_24"
+            android:text="add"
+            android:textColor="#505050"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/dialog_color_btn"
+            app:layout_constraintHorizontal_bias="0.245"
+            app:layout_constraintStart_toEndOf="@+id/dialog_add_date_btn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

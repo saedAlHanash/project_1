@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="show">information</string>
+    <string name="adding">Add</string>
+    <string name="titel">TMS</string>
+    <string name="username">User name</string>
+    <string name="pass">Password</string>
+    <string name="forget_password">forget password ?</string>
+    <string name="sing_in">Sing in to continue</string>
+    <string name="come_back">Hello there , welcome back </string>
+    <string name="sing_in_btn">Sing in</string>
+    <string name="regedit"> Regedit</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

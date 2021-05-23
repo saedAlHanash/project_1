@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#E4BE00</color>
+    <color name="colorPrimaryDark">#1C1800</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="darck">#2B2B2B</color>
+    <color name="darck1">#98CBF7</color>
+    <color name="white">#3C3F41</color>
+    <color name="purple_200" >#FFBB86FC </color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white1">#FFFFFFFF</color>
+    <color name="green">#00FF6A</color>
+
+
+    <array name="colors_aray">
+        <item name="appPar_lite">#FFF5D4</item>
+        <item name="purple_500">#FFF9C9</item>
+        <item name="purple_700">#F7FBCA</item>
+        <item name="teal_200">#FEFFD7</item>
+        <item name="colorPrimaryDark">#FFD6CC</item>
+        <item name="darck">#FFDED4</item>
+        <item name="fragment_lite">#FFE8D8</item>
+        <item name="darck1">#C9FFC4</item>
+        <item name="purple_200">#D8FBCF</item>
+        <item name="purple_200">#DAFFEB</item>
+        <item name="white1">#E4E3FF</item>
+        <item name="white1">#E6D9FF</item>
+        <item name="white1">#F3E1FF</item>
+
+    </array>
+
+    <array name="colors_Icons_aray">
+
+        <item name="appPar_lite">#FDCD2F</item>
+        <item name="purple_500">#FFE500</item>
+        <item name="purple_700">#C3D500</item>
+        <item name="teal_200">#D1D800</item>
+        <item name="colorPrimaryDark">#DD2C00</item>
+        <item name="darck">#FF3D00</item>
+        <item name="fragment_lite">#FF6A00</item>
+        <item name="darck1">#15CF00</item>
+        <item name="purple_200">#37FF00</item>
+        <item name="purple_200">#00FF7B</item>
+        <item name="white1">#2962FF</item>
+        <item name="white1">#5900FF</item>
+        <item name="white1">#9D00FF</item>
+    </array>
+
+
+    <array name="iconArray">
+        <item>@drawable/ic_baseline_notifications_none_24 </item>
+        <item>@drawable/ic_baseline_color_lens_24</item>
+        <item>@drawable/ic_outline_insert_chart_24</item>
+        <item>@drawable/ic_baseline_add_24 </item>
+    </array>
+</resources>
