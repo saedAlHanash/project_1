@@ -3,27 +3,4 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/personalFragment">
-    <fragment
-        android:id="@+id/personalFragment"
-        android:name="com.example.myapplication.UI.fragments.personalFragment"
-        android:label="fragment_personal"
-        tools:layout="@layout/fragment_personal" >
-        <action
-            android:id="@+id/action_personalFragment_to_groupFragment"
-            app:destination="@id/groupFragment"
-            app:popUpTo="@id/personalFragment"
-            app:popUpToInclusive="true" />
-    </fragment>
-    <fragment
-        android:id="@+id/groupFragment"
-        android:name="com.example.myapplication.UI.fragments.groupFragment"
-        android:label="fragment_group"
-        tools:layout="@layout/fragment_group" >
-        <action
-            android:id="@+id/action_groupFragment_to_personalFragment"
-            app:destination="@id/personalFragment"
-            app:popUpTo="@id/personalFragment" />
-    </fragment>
-</navigation>
+    android:id="@+id/nav_graph" />

@@ -22,8 +22,6 @@ public class adapterIconPicker extends RecyclerView.Adapter<adapterIconPicker.ho
         this.context = context;
         this.listener = listener;
         this.list1= context.getResources().obtainTypedArray(list1);
-
-
     }
 
     @NonNull
@@ -47,12 +45,7 @@ public class adapterIconPicker extends RecyclerView.Adapter<adapterIconPicker.ho
         public holder(@NonNull View itemView) {
             super(itemView);
             imgButton = itemView.findViewById(R.id.icon_button);
-            imgButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    listener.onIconClickListener(getAdapterPosition(),list1);
-                }
-            });
+            imgButton.setOnClickListener(v -> listener.onIconClickListener(getAdapterPosition(),list1));
         }
     }
 
