@@ -32,7 +32,8 @@
         android:layout_width="347dp"
         android:layout_height="30dp"
         android:layout_gravity="center"
-        android:text="singUp to be an Penguin and start new jorny"
+        android:text="singUp to be a member "
+        android:gravity="center"
         android:textSize="18sp" />
     <LinearLayout
             android:layout_width="match_parent"
@@ -53,7 +54,7 @@
             app:hintTextColor="@color/darck">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/user_box_TF"
+                android:id="@+id/register_act_fullName"
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
                 android:layout_gravity="center"
@@ -75,6 +76,7 @@
             app:hintTextColor="@color/darck">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/register_act_user_name"
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
                 android:layout_gravity="center"
@@ -93,6 +95,7 @@
             app:hintTextColor="@color/darck">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/register_act_email"
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
                 android:layout_gravity="center"
@@ -116,14 +119,26 @@
 
             <com.google.android.material.textfield.TextInputEditText
 
-                android:id="@+id/pass_box_TF"
+                android:id="@+id/register_act_password"
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
                 android:layout_gravity="center"
                 android:drawablePadding="3dp"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
+
+        <Button
+            android:id="@+id/register_act_add_account"
+            android:layout_width="224dp"
+            android:layout_height="wrap_content"
+            android:text="add account "
+            android:gravity="center"
+            android:background="#0001DFFF"
+            android:textColor="#03A9F4"
+            android:layout_gravity="center"
+
+            />
+    </LinearLayout>
 
 
 </LinearLayout>

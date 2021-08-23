@@ -1,28 +1,13 @@
 package com.example.myapplication.UI.fragments;
 
-import android.content.res.TypedArray;
-import android.view.View;
-
 import androidx.fragment.app.Fragment;
 
-import com.example.myapplication.adapters.adapterIconPicker;
-import com.example.myapplication.adapters.adapterRecyclerView;
-
 public class FragrantSaed extends Fragment
-        implements adapterRecyclerView.onRecyclerViewClickListener
-        , adapterIconPicker.onIconPickerClickListener {
-    @Override
-    public void onIconClickListener(int position, TypedArray array) {
+{
 
-    }
-
-    @Override
-    public void onItemClickListener(View view, int position) {
-
-    }
  /*   View view;
     RecyclerView recyclerView;
-    ArrayList<itemTask> list = new ArrayList<>();
+    ArrayList<ItemTask> list = new ArrayList<>();
     com.example.myapplication.adapters.adapterRecyclerView adapterRecyclerView;
     Dialog dialog, dialogIcons;
     FloatingActionButton fab;
@@ -55,7 +40,7 @@ public class FragrantSaed extends Fragment
                 dialogAdd.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        itemTask task = new itemTask();
+                        ItemTask task = new ItemTask();
                         task.setColor(itemColor);
                         task.setTitle(tvDialogTitle.getText().toString());
                         task.setDrawable(drawable);

@@ -18,7 +18,7 @@
 
     <TextView
         android:id="@+id/sing_in_txt_bold"
-        android:layout_width="match_parent"
+        android:layout_width="371dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="10dp"
@@ -94,8 +94,8 @@
         android:id="@+id/sing_in_forget_pass"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:layout_gravity="end"
-        android:layout_marginEnd="35dp"
+        android:layout_gravity="start"
+        android:layout_marginStart="35dp"
         android:background="#0001DFFF"
         android:elevation="0dp"
         android:text="@string/forget_password"
@@ -121,14 +121,14 @@
             />
 
         <Button
-            android:id="@+id/sing_in_regedit_btn"
+            android:id="@+id/sing_in_register_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="30dp"
             android:background="#0001DFFF"
             android:elevation="0dp"
-            android:text="@string/regedit"
+            android:text="@string/Register"
             android:textColor="#000" />
     </LinearLayout>
 
