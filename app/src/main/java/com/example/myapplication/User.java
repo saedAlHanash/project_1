@@ -5,8 +5,8 @@ import com.example.myapplication.UI.MainActivity;
 import com.google.gson.annotations.SerializedName;
 
 public class User {
-    @SerializedName("user_id")
-   public String  id;
+    @SerializedName("id")
+   public int  id;
     @SerializedName("name")
     String name;
     @SerializedName("user_name")
@@ -18,7 +18,7 @@ public class User {
     @SerializedName("phone")
     String phone;
     @SerializedName("points")
-    public  String  points;
+    public  int  points;
 
     public User() {
     }

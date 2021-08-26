@@ -24,7 +24,7 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
     ArrayList<ItemTask> list;
     onRecyclerViewClickListener RecyclerListener;
     Context context;
-   TypedArray iconArray;
+    TypedArray iconArray;
 
     public AdapterRecyclerView(ArrayList<ItemTask> list, Context context, onRecyclerViewClickListener recyclerListener) {
         this.list = list;
@@ -65,9 +65,13 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
         return list.get(i);
     }
 
+    public void addItem(ItemTask task) {
+        list.add(task);
+        this.notifyDataSetChanged();
+    }
 
-    public void  refreshFromDB(ArrayList<ItemTask> list){
-        this.list =list;
+    public void refreshFromDB(ArrayList<ItemTask> list) {
+        this.list = list;
         notifyDataSetChanged();
     }
 

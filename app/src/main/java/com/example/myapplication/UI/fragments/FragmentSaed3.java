@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 import com.example.myapplication.R;
 
 public class FragmentSaed3 extends Fragment {
-    View view;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

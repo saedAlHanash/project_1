@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".UI.saed">
+    tools:context=".UI.LoginActivity">
 
     <ImageView
         android:id="@+id/sing_in__img"
@@ -58,7 +58,7 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/sing_in_user"
+            android:id="@+id/sing_in_user_name"
             android:layout_width="match_parent"
             android:layout_height="51dp"
             android:layout_gravity="center"
@@ -82,7 +82,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
 
-            android:id="@+id/sing_in_pass"
+            android:id="@+id/sing_in_password"
             android:layout_width="match_parent"
             android:layout_height="51dp"
             android:layout_gravity="center"

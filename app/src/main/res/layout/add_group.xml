@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:background="@drawable/item_task"
+    android:orientation="vertical"
+    android:theme="@style/AppTheme">
+
+    <ImageView
+        android:id="@+id/dialog_group_imageView"
+        android:layout_width="187dp"
+        android:layout_height="138dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_task_rafiki" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="179dp"
+        android:padding="5dp">
+
+        <Button
+            android:id="@+id/dialog_group_add_add_btn"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:drawableEnd="@drawable/ic_baseline_add_24"
+            android:text="add"
+            android:textColor="#505050"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/dialog_group_add_text"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#fff"
+            android:foregroundTint="#FFFFFF"
+            android:gravity="center"
+            android:hint="group name"
+            android:inputType="none"
+            android:textColorHint="#818181"
+            android:textCursorDrawable="@color/darck"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

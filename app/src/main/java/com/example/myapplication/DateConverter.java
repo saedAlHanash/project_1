@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -38,5 +39,9 @@ public class DateConverter {
         return ""+difference_In_Days+"Day " + difference_In_Hours + "Hour";
     }
 
+    public static String now()
+    {
+        return dateToString(Calendar.getInstance().getTime());
+    }
 
 }

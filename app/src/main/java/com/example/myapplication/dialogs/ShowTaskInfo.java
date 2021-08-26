@@ -1,5 +1,6 @@
 package com.example.myapplication.dialogs;
 
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
@@ -30,6 +31,7 @@ public class ShowTaskInfo {
     Button edit, ok;
     CheckBox doneTask;
     Dialog dialog;
+    DatePickerDialog datePickerDialog;
     ItemTask task;
     AdapterRecyclerView adapterRecyclerView;
     int test = 2, position;
@@ -118,7 +120,7 @@ public class ShowTaskInfo {
                 adapterRecyclerView.refresh(position);
                 database.updateDB(task);
                 Toast.makeText(context, "save change", Toast.LENGTH_SHORT).show();
-            });
+            },new DatePickerDialog(context));
         });
     }
 

@@ -1,21 +1,44 @@
 package com.example.myapplication;
 
-import android.graphics.Color;
 import android.view.View;
+import com.google.gson.annotations.SerializedName;
 import java.util.Calendar;
 
 public class ItemTask {
+    @SerializedName("task_id")
     public int ID;
-    private String title = "?";
-    private String text = " ";
+    @SerializedName("title")
+    private String title;
+    @SerializedName("to_do")
+    private String text ;
+    @SerializedName("color")
     private int color;
+    @SerializedName("icon_color")
     private int iconColor;
+
     private int pointVisibility = View.INVISIBLE;
     private int iconVisibility = View.VISIBLE;
-    private boolean done = false;
+
+    @SerializedName("status")
+    private boolean done;
+    @SerializedName("drawable")
     private  int positionIcon;
-    private  String dateStart = now();
-    private  String dateEnd;
+    @SerializedName("start_date")
+    private  String dateStart;
+    @SerializedName("end_date")
+    private  String dateEnd=DateConverter.now();
+    @SerializedName("user_id")
+   private int userID;
+    @SerializedName("group_id")
+    private int groupID;
+
+    public int getGroupID() {
+        return groupID;
+    }
+
+    public void setGroupID(int groupID) {
+        this.groupID = groupID;
+    }
 
     public String getDateStart() {
         return dateStart;
@@ -87,8 +110,13 @@ public class ItemTask {
         this.iconVisibility = iconVisibility;
     }
 
-    public String now()
-    {
-        return DateConverter.dateToString(Calendar.getInstance().getTime());
+    public int getUserID() {
+        return userID;
     }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
+
+
 }
