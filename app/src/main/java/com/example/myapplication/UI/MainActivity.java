@@ -31,9 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
    public static Context context;
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
     protected void onCreate(Bundle paramBundle) {
-        DatePickerDialog datePickerDialog = new DatePickerDialog(this);
         context = getBaseContext();
         super.onCreate(paramBundle);
         setContentView(R.layout.activity_main);

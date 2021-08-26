@@ -2,7 +2,6 @@ package com.example.myapplication.UI.fragments;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
-import android.app.TimePickerDialog;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Bundle;
@@ -29,15 +28,11 @@ import com.example.myapplication.dialogs.addingDialog;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 
-@RequiresApi(api = Build.VERSION_CODES.N)
 public class personalFragment extends Fragment
         implements AdapterRecyclerView.onRecyclerViewClickListener {
     View view;
-
-    String endDate;
 
     RecyclerView recyclerView;
 
@@ -46,10 +41,6 @@ public class personalFragment extends Fragment
     FloatingActionButton fab;
 
     ArrayList<ItemTask> list = new ArrayList<>();
-
-    DatePickerDialog datePickerDialog;
-
-    Calendar calendar = Calendar.getInstance();
 
     public static DataBaseAccess dataBase;
 
@@ -78,7 +69,6 @@ public class personalFragment extends Fragment
         fab.setOnClickListener(v -> {
             addTaskHelper(new ItemTask());
         });
-        returnEndDate();
 
         return view;
     }
@@ -99,7 +89,7 @@ public class personalFragment extends Fragment
                     dataBase.updateDB(list.get(item.getGroupId()));
                     adapterRecyclerView.refresh(item.getGroupId());
                     Toast.makeText(getContext(), "save change", Toast.LENGTH_SHORT).show();
-                }, datePickerDialog);
+                });
                 break;
             }
             case 1: {
@@ -124,12 +114,11 @@ public class personalFragment extends Fragment
                         .setMessage("are you sure to done this task ?")
                         .setPositiveButton("ok", (dialog, which) -> {
                             Toast.makeText(getContext(), "task Done", Toast.LENGTH_SHORT).show();
-                            ItemTask task = list.get(item.getGroupId());
-                            task.setDone(true);
+                         ItemTask task= list.get(item.getGroupId());
+                         task.setDone(true);
                             dataBase.updateDB(task);
                         })
-                        .setNegativeButton("no", (dialog, which) -> {
-                        }).show();
+                        .setNegativeButton("no", (dialog, which) -> {}).show();
 
 
                 break;
@@ -140,12 +129,12 @@ public class personalFragment extends Fragment
 
     @Override
     public void onItemClickListener(ItemTask task, int position) {
-        if (!task.isDone()) {
+       if (!task.isDone()) {
             ShowTaskInfo taskInfo = new ShowTaskInfo(R.layout.show_task, getContext(), task, adapterRecyclerView, position);
-            taskInfo.show();
-        } else {
-            Toast.makeText(getContext(), "this task is Done", Toast.LENGTH_SHORT).show();
-        }
+           taskInfo.show();
+        } //else {
+        //    Toast.makeText(getContext(), "this task is Done", Toast.LENGTH_SHORT).show();
+      //  }
 
     }
 
@@ -158,33 +147,15 @@ public class personalFragment extends Fragment
             task.setPositionIcon(addingDialog.getIconPosition());
             task.setIconColor(addingDialog.getIconColor());
             task.setText(addingDialog.getTvDialogTxt().getText().toString());
-            task.setDateEnd(this.endDate);
+            task.setDateEnd(addingDialog.getEndDate());
             task.setDateStart(DateConverter.now());
             if (dataBase.insertDB(task)) {
-                Toast.makeText(personalFragment.this.getContext(), this.endDate, Toast.LENGTH_SHORT).show();
+                Toast.makeText(personalFragment.this.getContext(), "Date inserted", Toast.LENGTH_SHORT).show();
                 list = dataBase.restoreFromDataBase(false);
                 adapterRecyclerView.refreshFromDB(list);
             }
-        }, datePickerDialog);
+        });
     }
 
-    void returnEndDate() {
-        int hour = calendar.get(Calendar.HOUR_OF_DAY);
-        int minute = calendar.get(Calendar.MINUTE);
-        TimePickerDialog timePickerDialog = new TimePickerDialog(
-                getContext(),
-                (view, hourOfDay, minute1) -> this.endDate += " " + hourOfDay + ":" + minute1,
-                hour,
-                minute,
-                true);
-        datePickerDialog = new DatePickerDialog(getContext());
-        datePickerDialog.setOnDateSetListener((view, year, month, dayOfMonth) -> {
-            month += 1;
-            Toast.makeText(getContext(), "test test", Toast.LENGTH_SHORT).show();
-            this.endDate = "" + dayOfMonth + "-" + month + "-" + year;
-            timePickerDialog.show();
-        });
-        datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
-    }
 
 }

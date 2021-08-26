@@ -1,6 +1,5 @@
 package com.example.myapplication.dialogs;
 
-import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
@@ -31,7 +30,6 @@ public class ShowTaskInfo {
     Button edit, ok;
     CheckBox doneTask;
     Dialog dialog;
-    DatePickerDialog datePickerDialog;
     ItemTask task;
     AdapterRecyclerView adapterRecyclerView;
     int test = 2, position;
@@ -40,7 +38,6 @@ public class ShowTaskInfo {
     @LayoutRes
     int res;
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
     public ShowTaskInfo(int res, Context context, ItemTask task, AdapterRecyclerView adapterRecyclerView, int position) {
         this.res = res;
         this.context = context;
@@ -52,7 +49,7 @@ public class ShowTaskInfo {
             dialog = new Dialog(context);
             dialog.setContentView(res);
             inflateItem();
-            onClick();
+            //  onClick();
         } catch (Exception e) {
             Toast.makeText(context, "some thing is wrong", Toast.LENGTH_SHORT).show();
         }
@@ -79,7 +76,7 @@ public class ShowTaskInfo {
         dialog.show();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
+
     void onClick() {
         doneTask.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
@@ -120,7 +117,7 @@ public class ShowTaskInfo {
                 adapterRecyclerView.refresh(position);
                 database.updateDB(task);
                 Toast.makeText(context, "save change", Toast.LENGTH_SHORT).show();
-            },new DatePickerDialog(context));
+            });
         });
     }
 
@@ -132,8 +129,8 @@ public class ShowTaskInfo {
 
     void setItem() {
         endDate.setText(task.getDateEnd().substring(0, 10));
-        dateStart.setText(task.getDateStart().substring(0, 10));
-        dateReminding.setText(saed());
+       dateStart.setText(task.getDateStart().substring(0, 10));
+         dateReminding.setText(saed());
         text.setText(task.getText());
         title.setText(task.getTitle());
     }

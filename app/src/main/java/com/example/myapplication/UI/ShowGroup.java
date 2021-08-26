@@ -101,7 +101,7 @@ public class ShowGroup extends AppCompatActivity implements AdapterRecyclerView.
                         Toast.makeText(ShowGroup.this, t.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
-            },new DatePickerDialog(ShowGroup.this));
+            });
         });
     }
 

@@ -1,6 +1,7 @@
 package com.example.myapplication.dialogs;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,7 +34,6 @@ import petrov.kristiyan.colorpicker.ColorPicker;
 
 public class addingDialog {
     Context context;
-
     Dialog dialog, dialogIcons;
     Button dialogAdd, dialogDate;
     ImageButton dialogColorButton, dialogIconButton;
@@ -120,21 +121,40 @@ public class addingDialog {
         dialog.show();
     }
 
-    public void addingListener(listener listener,DatePickerDialog datePickerDialog) {
+    public void addingListener(listener listener) {
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int minute = calendar.get(Calendar.MINUTE);
+
+        int syle = AlertDialog.THEME_HOLO_LIGHT;
+
         dialogAdd.setOnClickListener(v -> {
             listener.onAddButtonListener();
-            Toast.makeText(context, ""+getEndDate(), Toast.LENGTH_SHORT).show();
             dialog.cancel();
         });
         dialogColorButton.setOnClickListener(v -> colorDialog());
         dialogIconButton.setOnClickListener(v -> iconsDialog());
-        dialogDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                datePickerDialog.show();
-            }
-        });
+        dialogDate.setOnClickListener(v -> {
 
+            TimePickerDialog timePickerDialog = new TimePickerDialog(
+                    context,
+                    (view, hourOfDay, minute1) -> endDate += " " + hourOfDay + ":" + minute1,
+                    hour,
+                    minute,
+                    true);
+
+            DatePickerDialog datePickerDialog = new DatePickerDialog(context,
+                    (view, year1, month1, dayOfMonth) -> {
+                        month1 += 1;
+                        endDate = "" + dayOfMonth + "-" + month1 + "-" + year1+" ";
+                        timePickerDialog.show();
+                    },
+                    year, month, day);
+            datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
+            datePickerDialog.show();
+        });
     }
 
     public void colorDialog() {
